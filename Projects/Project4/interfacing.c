@@ -26,8 +26,8 @@ int main(){
 
 	printf("Menu Driven Interface:\n");
 	printf("1.Sequential Count in Binary\n");
-	printf("2.Sweeping Light Movement From Left to Right\n");
-	printf("3.Sweeping Light Movement From Right to Left\n");
+	printf("2.Sweeping Light Movement From Right to Left\n");
+	printf("3.Sweeping Light Movement From Left to Right\n");
 	printf("4.Continuous Sweeping Light Movement\n");
 	printf("5.User Input Decimal to Binary Translation\n");
 	printf("Enter Your Choice\n");
@@ -63,16 +63,93 @@ int main(){
 		digitalWrite(LED1, LOW);
 		}
 		else if (input == 2){
-			printf("Sweeping Light Movement From Left to Right Activated\n");
+			printf("Sweeping Light Movement From Right to Left Activated\n");
+			digitalWrite(LED1, HIGH);
+			delay(2000);
+			digitalWrite(LED1, LOW);
+			delay(2000);
+			digitalWrite(LED2, HIGH);
+			delay(2000);
+			digitalWrite(LED2, LOW);
+			delay(2000);
+			digitalWrite(LED3, HIGH);
+			delay(2000);
+			digitalWrite(LED3, LOW);
+			delay(2000);
+			digitalWrite(LED4, HIGH);
+			delay(2000);
+			digitalWrite(LED4, LOW);
+			delay(2000);
+			digitalWrite(LED5, HIGH);
+			delay(2000);
+			digitalWrite(LED5, LOW);
 		}
 		else if (input == 3){
-			printf("Sweeping Light Movement From Right to Left Activated\n");
+			printf("Sweeping Light Movement From Left to Right Activated\n");
+			digitalWrite(LED5, HIGH);
+			delay(2000);
+			digitalWrite(LED5, LOW);
+			delay(2000);
+			digitalWrite(LED4, HIGH);
+			delay(2000);
+			digitalWrite(LED4, LOW);
+			delay(2000);
+			digitalWrite(LED3, HIGH);
+			delay(2000);
+			digitalWrite(LED3, LOW);
+			delay(2000);
+			digitalWrite(LED2, HIGH);
+			delay(2000);
+			digitalWrite(LED2, LOW);
+			delay(2000);
+			digitalWrite(LED1, HIGH);
+			delay(2000);
+			digitalWrite(LED1, LOW);
 		}
 		else if (input == 4){
 			printf("Continuous Sweeping Light Movement Activated\n");
+			while (1==1){
+
+			digitalWrite(LED5, HIGH);
+			delay(2000);
+			digitalWrite(LED5, LOW);
+			delay(2000);
+			digitalWrite(LED4, HIGH);
+			delay(2000);
+			digitalWrite(LED4, LOW);
+			delay(2000);
+			digitalWrite(LED3, HIGH);
+			delay(2000);
+			digitalWrite(LED3, LOW);
+			delay(2000);
+			digitalWrite(LED2, HIGH);
+			delay(2000);
+			digitalWrite(LED2, LOW);
+			delay(2000);
+			digitalWrite(LED1, HIGH);
+			delay(2000);
+			digitalWrite(LED1, LOW);
+			delay(2000);
+			digitalWrite(LED2, HIGH);
+			delay(2000);
+			digitalWrite(LED2, LOW);
+			delay(2000);
+			digitalWrite(LED3, HIGH);
+			delay(2000);
+			digitalWrite(LED3, LOW);
+			delay(2000);
+			digitalWrite(LED4, HIGH);
+			delay(2000);
+			digitalWrite(LED4, LOW);
+			delay(2000);
+//			digitalWrite(LED5, HIGH);
+//			delay(2000);
+//			digitalWrite(LED5, LOW);
+			}
 		}
 		else if (input == 5){
 			printf("User Input Decimal to Binary Translation Activated\n");
+
 		}
 		else {
 			printf("Not vaild. Enter a  different integer Activated\n");
