@@ -44,9 +44,9 @@ int main(){
 						for (int b = 0; b < 2; b++){
 							for (int a = 0; a < 1; a++){
 								digitalWrite(LED5, LOW);
-								delay(1000);
+								delay(500);
 								digitalWrite(LED5, HIGH);
-								delay(1000);
+								delay(500);
 							}
 							digitalWrite(LED5, LOW);
 							digitalWrite(LED4, HIGH);
@@ -64,91 +64,150 @@ int main(){
 		}
 		else if (input == 2){
 			printf("Sweeping Light Movement From Right to Left Activated\n");
-			digitalWrite(LED1, HIGH);
-			delay(2000);
-			digitalWrite(LED1, LOW);
-			delay(2000);
-			digitalWrite(LED2, HIGH);
-			delay(2000);
-			digitalWrite(LED2, LOW);
-			delay(2000);
-			digitalWrite(LED3, HIGH);
-			delay(2000);
-			digitalWrite(LED3, LOW);
-			delay(2000);
-			digitalWrite(LED4, HIGH);
-			delay(2000);
-			digitalWrite(LED4, LOW);
-			delay(2000);
 			digitalWrite(LED5, HIGH);
-			delay(2000);
+			delay(1000);
 			digitalWrite(LED5, LOW);
+			delay(1000);
+			digitalWrite(LED4, HIGH);
+			delay(1000);
+			digitalWrite(LED4, LOW);
+			delay(1000);
+			digitalWrite(LED3, HIGH);
+			delay(1000);
+			digitalWrite(LED3, LOW);
+			delay(1000);
+			digitalWrite(LED2, HIGH);
+			delay(1000);
+			digitalWrite(LED2, LOW);
+			delay(1000);
+			digitalWrite(LED1, HIGH);
+			delay(1000);
+			digitalWrite(LED1, LOW);
 		}
 		else if (input == 3){
 			printf("Sweeping Light Movement From Left to Right Activated\n");
-			digitalWrite(LED5, HIGH);
-			delay(2000);
-			digitalWrite(LED5, LOW);
-			delay(2000);
-			digitalWrite(LED4, HIGH);
-			delay(2000);
-			digitalWrite(LED4, LOW);
-			delay(2000);
-			digitalWrite(LED3, HIGH);
-			delay(2000);
-			digitalWrite(LED3, LOW);
-			delay(2000);
-			digitalWrite(LED2, HIGH);
-			delay(2000);
-			digitalWrite(LED2, LOW);
-			delay(2000);
 			digitalWrite(LED1, HIGH);
-			delay(2000);
+			delay(1000);
 			digitalWrite(LED1, LOW);
+			delay(1000);
+			digitalWrite(LED2, HIGH);
+			delay(1000);
+			digitalWrite(LED2, LOW);
+			delay(1000);
+			digitalWrite(LED3, HIGH);
+			delay(1000);
+			digitalWrite(LED3, LOW);
+			delay(1000);
+			digitalWrite(LED4, HIGH);
+			delay(1000);
+			digitalWrite(LED4, LOW);
+			delay(1000);
+			digitalWrite(LED5, HIGH);
+			delay(1000);
+			digitalWrite(LED5, LOW);
 		}
 		else if (input == 4){
 			printf("Continuous Sweeping Light Movement Activated\n");
 			while (1==1){
 
 			digitalWrite(LED5, HIGH);
-			delay(2000);
+			delay(1000);
 			digitalWrite(LED5, LOW);
-			delay(2000);
+			delay(1000);
 			digitalWrite(LED4, HIGH);
-			delay(2000);
+			delay(1000);
 			digitalWrite(LED4, LOW);
-			delay(2000);
+			delay(1000);
 			digitalWrite(LED3, HIGH);
-			delay(2000);
+			delay(1000);
 			digitalWrite(LED3, LOW);
-			delay(2000);
+			delay(1000);
 			digitalWrite(LED2, HIGH);
-			delay(2000);
+			delay(1000);
 			digitalWrite(LED2, LOW);
-			delay(2000);
+			delay(1000);
 			digitalWrite(LED1, HIGH);
-			delay(2000);
+			delay(1000);
 			digitalWrite(LED1, LOW);
-			delay(2000);
+			delay(1000);
 			digitalWrite(LED2, HIGH);
-			delay(2000);
+			delay(1000);
 			digitalWrite(LED2, LOW);
-			delay(2000);
+			delay(1000);
 			digitalWrite(LED3, HIGH);
-			delay(2000);
+			delay(1000);
 			digitalWrite(LED3, LOW);
-			delay(2000);
+			delay(1000);
 			digitalWrite(LED4, HIGH);
-			delay(2000);
+			delay(1000);
 			digitalWrite(LED4, LOW);
-			delay(2000);
-//			digitalWrite(LED5, HIGH);
-//			delay(2000);
-//			digitalWrite(LED5, LOW);
+			delay(1000);
 			}
 		}
 		else if (input == 5){
+			int input;
+			int remain = 0;
 			printf("User Input Decimal to Binary Translation Activated\n");
+			printf("Enter a Decimal Number (0-31):\n");
+			scanf("%d", &input);
+			for (int k = 1; k < 2; k++){
+				if (input >= 0 && input <= 31){
+					printf("Beginning to Determine\n");
+					if ((input/16) == 1){
+						digitalWrite(LED1, HIGH);
+						remain = (input - 16);
+//						printf("Remaining vaue: %d\n", remain);
+					}
+					else {
+						remain = input;
+					}
+					if ((remain/8) == 1){
+						digitalWrite(LED2, HIGH);
+						remain = (remain - 8);
+//						printf("Remaining vaue: %d\n", remain);
+					}
+					if ((remain/4) == 1){
+						digitalWrite(LED3, HIGH);
+						remain = (remain - 4);
+//						printf("Remaining vaue: %d\n", remain);
+					}
+					if ((remain/2) == 1){
+						digitalWrite(LED4, HIGH);
+						remain = (remain - 2);
+//						printf("Remaining vaue: %d\n", remain);
+					}
+					if ((remain/1) == 1){
+						digitalWrite(LED5, HIGH);
+						remain = (remain - 1);
+//						printf("Remaining vaue: %d\n", remain);
+					}
+					delay(5000);
+				}
+				else {
+					for (int j = 0; j < 5; j++){
+						digitalWrite(LED1, HIGH);
+						digitalWrite(LED2, HIGH);
+						digitalWrite(LED3, HIGH);
+						digitalWrite(LED4, HIGH);
+						digitalWrite(LED5, HIGH);
+						delay(1000);
+						digitalWrite(LED1, LOW);
+						digitalWrite(LED2, LOW);
+						digitalWrite(LED3, LOW);
+						digitalWrite(LED4, LOW);
+						digitalWrite(LED5, LOW);
+						delay(1000);
+					}
+					printf("Out of Vaild Range. Enter Number Between 0-31\n");
+					scanf("%d", &input);
+					k = 0;
+				}
+			}
+			digitalWrite(LED1, LOW);
+			digitalWrite(LED2, LOW);
+			digitalWrite(LED3, LOW);
+			digitalWrite(LED4, LOW);
+			digitalWrite(LED5, LOW);
 
 		}
 		else {
